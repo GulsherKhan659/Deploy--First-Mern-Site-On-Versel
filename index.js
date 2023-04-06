@@ -22,7 +22,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)))
 
-app.use('/blog', Rout.blog)
+app.use('/', Rout.blog)
 app.use('*', (req, res) => {
     res.send("<h4>GELL</h4>")
     // res.sendStatus(401).send("Page Not Found")
