@@ -13,10 +13,6 @@
         {
             "src": "/blog/(.*)",
             "dest": "index.js"
-        },
-        {
-            "src": "/blog",
-            "dest": "index.js"
         }
     ]
 }
