@@ -30,6 +30,5 @@ app.use('*', (req, res) => {
 
 console.log(process.env.PUBLIC_DIR)
 app.listen(process.env.PORT, () => {
-    console.log()
     console.log(`http://localhost:${process.env.PORT}`)
 })
