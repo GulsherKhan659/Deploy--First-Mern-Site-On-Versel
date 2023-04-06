@@ -19,7 +19,7 @@
             "dest": "build/index.html"
         },
         {
-            "src": "/(.+)",
+            "src": "/blog/(.+)",
             "dest": "build/$1"
         }
     ]
