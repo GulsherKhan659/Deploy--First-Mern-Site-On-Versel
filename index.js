@@ -13,7 +13,7 @@ const app = express()
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(`mongodb+srv://developergulsherkhan:${process.env.MONGO_DB}@cluster0.khhegkg.mongodb.net/blog_DB`);
+    await mongoose.connect(process.env.MONGO_DB);
 }
 
 
