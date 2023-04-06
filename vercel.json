@@ -11,7 +11,7 @@
     ],
     "routes": [
         {
-            "source": "/",
+            "source": "/**",
             "destination": "build/index.html"
         },
         {
