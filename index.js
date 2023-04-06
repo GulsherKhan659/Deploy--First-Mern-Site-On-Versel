@@ -2,6 +2,8 @@ require('dotenv').config()
 const cors = require('cors');
 const mongoose = require('mongoose')
 const express = require('express');
+const path = require('path')
+
 
 const Rout = require('./router/blog')
 
@@ -11,19 +13,19 @@ const app = express()
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/blog_app');
+    await mongoose.connect(`mongodb+srv://developergulsherkhan:${process.env.MONGO_DB}@cluster0.khhegkg.mongodb.net/blog_DB`);
 }
 
 
 app.use(cors())
 app.use(express.json())
-app.use(express.static(process.env.PUBLIC_DIR))
+app.use(express.static(path.join(__dirname, process.env.PUBLIC_DIR)))
 
 app.use('/', Rout.blog)
-
-app.get('/', (rq, rs) => {
-    rs.send("S-E-R-V-E-R")
+app.use('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, process.env.PUBLIC_DIR, 'index.html'))
 })
+
 
 console.log(process.env.PUBLIC_DIR)
 app.listen(process.env.PORT, () => {
