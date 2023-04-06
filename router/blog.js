@@ -5,10 +5,10 @@ const blog = express.Router()
 
 
 
-blog.get('/blog', Ctrl.getBlogs)
-blog.post('/blog', Ctrl.addBlog)
-blog.patch('/blog/:id', Ctrl.editBlog)
-blog.delete('/blog/:id', Ctrl.deleteBlog)
+blog.get('/', Ctrl.getBlogs)
+blog.post('/', Ctrl.addBlog)
+blog.patch('/:id', Ctrl.editBlog)
+blog.delete('/:id', Ctrl.deleteBlog)
 
 
 
