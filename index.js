@@ -23,11 +23,11 @@ app.use(express.json())
 app.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)))
 
 app.use('/', Rout.blog)
-app.use('*', (req, res) => {
-    res.send("<h4>GELL</h4>")
-    // res.sendStatus(401).send("Page Not Found")
-    // res.send(path.resolve(__dirname, process.env.PUBLIC_DIR, 'index.html'))
-})
+// app.use('*', (req, res) => {
+//     res.send("<h4>GELL</h4>")
+//     // res.sendStatus(401).send("Page Not Found")
+//     // res.send(path.resolve(__dirname, process.env.PUBLIC_DIR, 'index.html'))
+// })
 
 
 console.log(process.env.PUBLIC_DIR)
