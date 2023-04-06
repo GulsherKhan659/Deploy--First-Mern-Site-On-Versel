@@ -11,11 +11,11 @@
     ],
     "routes": [
         {
-            "source": "/(.*)",
+            "src": "/(.*)",
             "destination": "build/index.html"
         },
         {
-            "source": "/(.+)",
+            "src": "/(.+)",
             "destination": "build/$1"
         }
     ]
