@@ -14,7 +14,7 @@ const app = express()
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(process.env.MONGO_DB);
+    await mongoose.connect(`${process.env.MONGO_DB}`);
 }
 
 
@@ -24,11 +24,12 @@ app.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)))
 
 app.use('/', Rout.blog)
 app.use('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, process.env.PUBLIC_DIR, 'index.html'))
+    res.sendStatus(401).send("Page Not Found")
+    // res.sendFile(path.resolve(__dirname, process.env.PUBLIC_DIR, 'index.html'))
 })
 
 
 console.log(process.env.PUBLIC_DIR)
 app.listen(process.env.PORT, () => {
-    console.log(`http://localhost:${process.env.PORT}`)
+    console.log(process.env.PORT)
 })
