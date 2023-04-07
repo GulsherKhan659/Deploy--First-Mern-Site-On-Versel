@@ -11,6 +11,10 @@
     ],
     "routes": [
         {
+            "src": "/api/blog",
+            "dest": "/index.js"
+        },
+        {
             "src": "/api/blog/(.*)",
             "dest": "/index.js"
         },
